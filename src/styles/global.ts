@@ -15,7 +15,7 @@ export const GlobalStyles =createGlobalStyle`
 
 body{
     font-family: 'Roboto', sans-serif;
-    
+    background-color: ${props => props.theme["white_200"]};
     font-size: 1.6rem;
 
     -webkit-font-smoothing: antialiased;
@@ -33,5 +33,9 @@ a{
 button {
     cursor: pointer;
     border: none;
+}
+
+button:hover{
+    filter: brightness(1.02);
 }
 `
