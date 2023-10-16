@@ -8,8 +8,14 @@ export function Header(){
             <img src={icon} alt="Coffee Delivery"/>
 
             <div>
-                <span><MapPin size={23} color="#8047F8" weight="fill"/> Porto Alegre, RS</span>
-                <button><ShoppingCart size={23} color="#C47F00" weight="fill"/></button>
+                <span>
+                    <MapPin size={23} color="#8047F8" weight="fill"/> 
+                    Porto Alegre, RS
+                    </span>
+                <button>
+                    <ShoppingCart size={23} color="#C47F00" weight="fill"/>
+                    
+                    </button>
             </div>
         </Container>
     )

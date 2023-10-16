@@ -2,6 +2,7 @@ import "styled-components";
 
 export const defautTheme = {
     
+    //to use: ${props => props.theme["*color*"]};
     yellow_800: '#C47F17',
     yellow_200: '#DBAC2C',
     yellow_100: '#F1E9C9',
