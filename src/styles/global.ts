@@ -17,7 +17,7 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: ${props => props.theme["white_200"]};
     font-size: 1.6rem;
-
+    padding: 3.2rem 16rem;
     -webkit-font-smoothing: antialiased;
     
 }
@@ -37,5 +37,11 @@ button {
 
 button:hover{
     filter: brightness(1.02);
+}
+
+@media (max-width: 700px) {
+    body{
+        padding: 2rem 2rem;
+    }
 }
 `

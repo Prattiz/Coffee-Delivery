@@ -6,7 +6,7 @@ export const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3.2rem 16rem;
+    
 
     div{
         display: flex;
@@ -29,6 +29,21 @@ export const Container = styled.header`
         padding: 8px;
         border-radius: 6px;
         background: ${props => props.theme["yellow_100"]}; ;
+    }
+
+    button.sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .backButton{
+        background-color: ${props => props.theme["purple_100"]}; 
     }
 
     @media (max-width: 630px) {
