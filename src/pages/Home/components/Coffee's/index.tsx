@@ -1,4 +1,4 @@
-import { Container, Content } from "./styles";
+import { Content } from "./styles";
 import { Card } from "../Card";
 import { Cooffes } from "../Details/allCoffes";
 
@@ -12,7 +12,7 @@ export function Coffes(){
     
 
     return(
-        <Container>
+        <div>
             <h1>Nossos Cafés</h1>
 
             <Content>
@@ -27,6 +27,6 @@ export function Coffes(){
             ))
           }
             </Content>
-        </Container>
+        </div>
     )
 }

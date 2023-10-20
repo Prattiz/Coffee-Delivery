@@ -37,9 +37,9 @@ export function Card({ image, name, text, tags }: AllCoffeProps){
                 <p>{text}</p>
             </Apresentation>
         
-        <div>
-            <span>R$ 9:90</span>
-            <h1>os botões</h1>
-        </div>
+            <div>
+                <span>R$ 9:90</span>
+                <h1>os botões</h1>
+            </div>
         </Container>
     )}
