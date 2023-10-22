@@ -1,4 +1,5 @@
 import { Container, Apresentation } from "./styles";
+import { ShoppingCartSimple } from "@phosphor-icons/react";
 
 
 interface AllCoffeProps {
@@ -26,12 +27,13 @@ export function Card({ image, name, text, tags }: AllCoffeProps){
         <Container>
             <Apresentation>
                 <img src={image} alt={name} />
-
-                {
-                tags.map((tag, index) => (
-                    <CoffeeTag key={index} tag={tag}/>
-                ))
-                }
+                <div>
+                    {
+                    tags.map((tag, index) => (
+                        <CoffeeTag key={index} tag={tag}/>
+                    ))
+                    }
+                </div>
 
                 <h1>{name}</h1>
                 <p>{text}</p>
@@ -39,7 +41,7 @@ export function Card({ image, name, text, tags }: AllCoffeProps){
         
             <div>
                 <span>R$ 9:90</span>
-                <h1>os botões</h1>
+                <button><ShoppingCartSimple size={22} color="#fff" weight="fill"/></button>
             </div>
         </Container>
     )}

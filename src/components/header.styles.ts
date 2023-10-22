@@ -31,16 +31,7 @@ export const Container = styled.header`
         background: ${props => props.theme["yellow_100"]}; ;
     }
 
-    button.sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-    }
+    
 
     .backButton{
         background-color: ${props => props.theme["purple_100"]}; 
@@ -52,9 +43,9 @@ export const Container = styled.header`
         padding: 3.2rem;
         
         div{
-        display: flex;
-        flex-direction: column;
-        margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 12px;
         }  
     }
 

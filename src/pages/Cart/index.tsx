@@ -1,18 +1,14 @@
-import { Container, Details } from "./styles";
 import { Header } from "../../components/Header";
+import { Order } from "./components/Order";
 
 export function Cart() {
  
     return (
-      <Container>
+      <div>
         <Header isOutOfHome={true}/>
         
-        <Details>
-          <h1>Complete seu pedido</h1>
+        <Order/>
 
-          
-        </Details>
-
-      </Container>
+      </div>
     )
   }
