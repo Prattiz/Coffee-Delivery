@@ -9,7 +9,7 @@ export const Container = styled.div`
     background:  ${props => props.theme["white_300"]};
 
 
-    div{
+    form, div{
         
         display: flex;
         padding-top: 1rem;
@@ -20,7 +20,14 @@ export const Container = styled.div`
             font-size: 2.4rem;
             font-family: 'Baloo 2';
             font-weight: bold;
+            white-space: nowrap;
+        }
+
+        p{
             color: ${props => props.theme["gray_400"]};
+            display: flex;
+            align-items: center;
+            gap: 2px;
         }
     }
 
@@ -28,6 +35,24 @@ export const Container = styled.div`
         background-color: ${props => props.theme["purple_800"]};
         border-radius: 8px;
         padding: 8px;
+    }
+    input{
+        width: 3rem;
+        border: none;
+    }
+
+    .toogleNumber{
+        background-color: ${props => props.theme["white_500"]};
+        border-radius: 8px;
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+
+        button{
+            background: none;
+            color: ${props => props.theme["purple_800"]};
+            padding: 8px;
+        }
     }
 `
 

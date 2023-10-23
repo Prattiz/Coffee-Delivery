@@ -51,6 +51,18 @@ button:hover{
     filter: brightness(1.02);
 }
 
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+
 @media (max-width: 700px) {
     body{
         padding: 2rem 2rem;

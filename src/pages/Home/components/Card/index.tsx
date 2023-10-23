@@ -1,5 +1,5 @@
 import { Container, Apresentation } from "./styles";
-import { ShoppingCartSimple } from "@phosphor-icons/react";
+import { ShoppingCartSimple, Plus, Minus } from "@phosphor-icons/react";
 
 
 interface AllCoffeProps {
@@ -39,9 +39,18 @@ export function Card({ image, name, text, tags }: AllCoffeProps){
                 <p>{text}</p>
             </Apresentation>
         
-            <div>
-                <span>R$ 9:90</span>
-                <button><ShoppingCartSimple size={22} color="#fff" weight="fill"/></button>
-            </div>
+            <form>
+                <p>R$<span>9:90</span></p>
+                
+                <div className="toogleNumber"> 
+                    <button><Plus size={20} weight="bold"/></button>
+                    <input type="number" min={0} max={20}/>
+                    <button><Minus size={20} weight="bold"/></button>
+                </div>
+               
+
+                <button type="submit"><ShoppingCartSimple size={22} color="#fff" weight="fill"/></button>
+            </form>
+            
         </Container>
     )}
