@@ -1,5 +1,5 @@
 import { Container, Order } from "./styles";
-import { Header } from "../../components/Header";
+import { Header } from "../../components/Header/Header";
 import motoImage from "../../assets/manMotocicle.png";
 import {CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react"
 
@@ -8,7 +8,7 @@ export function Sucess() {
 
     return (
       <Container>
-        <Header isOutOfHome={true}/>
+        <Header isOutOfHome={true} value={2}/>
         <main>
 
             <h1>Uhu! Pedido Confirmado</h1>

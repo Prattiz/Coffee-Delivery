@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 
-    margin-top: 5rem;
 
     h1{
         font-size: 1.8rem;  
@@ -10,15 +9,37 @@ export const Container = styled.div`
 
     form{
         display: flex;
-        gap:3.2rem;
+        gap:3.2rem; 
+    }
+
+    .footerSelected{
+        display: flex;
+        flex-direction: column;
+        width: 37.2rem;
+        gap: 12px;
+        
+
+        p, strong{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button{
+            margin-top: 12px;
+            background-color: ${props => props.theme["yellow_800"]};
+            padding: 12px 8px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
     }
 `
 
 export const Content = styled.main`
 
-    max-width: 640px;
     display: flex;
     flex-direction: column;
+    
     gap: 3.2rem;
     
     header, footer{
@@ -57,18 +78,31 @@ export const CooffeCard = styled.div`
     }
 
     div{
-            display: flex;
-            gap:1.2rem;
+        display: flex;
+        gap:1.2rem;
     }
 
     #cep, #numero, #bairro{
-            width: 20rem;
+        width: 20rem;
         }
 
     #uf{
         width: 20%;
-    }
+    }    
 
-    
-    
+    .payme{
+        
+        label{
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        input:checked + label {
+            background-color: ${props => props.theme["yellow_200"]};
+            color: ${props => props.theme["white"]};
+            font-weight: bold;
+        }
+    }
 `

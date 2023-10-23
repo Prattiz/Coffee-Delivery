@@ -44,7 +44,7 @@ export function Card({ image, name, text, tags }: AllCoffeProps){
                 
                 <div className="toogleNumber"> 
                     <button><Plus size={20} weight="bold"/></button>
-                    <input type="number" min={0} max={20}/>
+                    <input type="number" min={0} max={20} disabled/>
                     <button><Minus size={20} weight="bold"/></button>
                 </div>
                

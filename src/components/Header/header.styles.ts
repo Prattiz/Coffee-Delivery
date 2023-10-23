@@ -6,6 +6,7 @@ export const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4rem;
     
 
     div{
@@ -25,18 +26,33 @@ export const Container = styled.header`
         padding: 8px;
     }
 
-    button{
-        padding: 8px;
-        border-radius: 6px;
-        background: ${props => props.theme["yellow_100"]}; ;
+    strong{
+        position: absolute;
+        top: -20%;
+        right: -15%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: ${props => props.theme["white"]};
+        background-color: ${props => props.theme["yellow_800"]};
+        font-size: 1.2rem;
+        border-radius: 10px;
     }
 
-    
+    button{
+        position: relative;
+        padding: 8px;
+        border-radius: 6px;
+        background: ${props => props.theme["yellow_100"]};
+    }
 
     .backButton{
         background-color: ${props => props.theme["purple_100"]}; 
     }
 
+    
     @media (max-width: 630px) {
         flex-direction: column;
         justify-content: center;

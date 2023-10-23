@@ -1,5 +1,6 @@
-import { Container, Content, CooffeCard } from "./styles";
+import { Container, Content, CooffeCard } from "../styles";
 import { MapPinLine, CurrencyDollar } from "@phosphor-icons/react";
+import { Selected } from "../Selected";
 
 
 export function Order(){
@@ -23,29 +24,29 @@ export function Order(){
                         
                             
                         <input type="text" id="cep" placeholder="CEP" />
-                        <label htmlFor="cep">CEP</label>
+                        <label className="sr-only" htmlFor="cep">CEP</label>
                             
                         <input type="text" id="rua" placeholder="Rua" />
-                        <label htmlFor="rua">Rua</label>
+                        <label className="sr-only" htmlFor="rua">Rua</label>
 
                         <div>
                             <input type="text" id="numero" placeholder="Número" />
-                            <label htmlFor="numero">Número</label>
+                            <label className="sr-only" htmlFor="numero">Número</label>
 
                             <input type="text" id="complemento" placeholder="Complemento (Opcional)" />
-                            <label htmlFor="complemento">Complemento (Opcional)</label>
+                            <label className="sr-only" htmlFor="complemento">Complemento, Opcional</label>
                         </div>
 
                         <div>
                         
                             <input type="text" id="bairro" placeholder="Bairro" />
-                            <label htmlFor="bairro">Bairro</label>
+                            <label className="sr-only" htmlFor="bairro">Bairro</label>
 
                             <input type="text" id="cidade" placeholder="Cidade" />
-                            <label htmlFor="cidade">Cidade</label>
+                            <label className="sr-only" htmlFor="cidade">Cidade</label>
 
                             <input type="text" id="uf" placeholder="UF" />
-                            <label htmlFor="uf">Uf</label>
+                            <label className="sr-only" htmlFor="uf">Uf</label>
 
                         </div>
                         
@@ -60,26 +61,21 @@ export function Order(){
                         </footer>
 
                         <div className="payme">
-                            <input type="radio" id="cartaoCredito" value="cartaoCredito"/>
+                            <input type="radio" name="metodoPagamento" id="cartaoCredito" value="cartaoCredito" className="sr-only"/>
                             <label htmlFor="cartaoCredito">Cartão de Crédito</label>
 
-                            <input type="radio" id="cartaoDebito" value="cartaoDebito"/>
+                            <input type="radio" name="metodoPagamento" id="cartaoDebito" value="cartaoDebito" className="sr-only"/>
                             <label htmlFor="cartaoDebito">Cartão de Débito</label>
 
-                            <input type="radio" id="dinheiro" value="dinheiro"/>
+                            <input type="radio" name="metodoPagamento" id="dinheiro" value="dinheiro" className="sr-only" />
                             <label htmlFor="dinheiro">Dinheiro</label>
-
                         </div>
                         
                     </CooffeCard>       
                 
                 </Content>
 
-                <Content>
-                    <h1>Cafés Selecionados</h1>
-
-                    <CooffeCard></CooffeCard>
-                </Content>
+                <Selected/>
             </form>
             
         </Container>

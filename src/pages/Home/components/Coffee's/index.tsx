@@ -1,18 +1,12 @@
 import { Content } from "./styles";
 import { Card } from "../Card";
-import { Cooffes } from "../Details/allCoffes";
+import { Cooffes } from "../../../../components/Details/allCoffes";
 
-
-  
 
 export function Coffes(){
 
-    
-
-    
-
     return(
-        <div>
+        <div className="sm-text-center">
             <h1>Nossos Cafés</h1>
 
             <Content>

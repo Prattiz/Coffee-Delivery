@@ -34,9 +34,10 @@ a{
 button {
     cursor: pointer;
     border: none;
+    color: ${props => props.theme["white"]};
 }
 
-.sr-only, label {
+.sr-only{
     position: absolute;
     width: 1px;
     height: 1px;
@@ -66,6 +67,12 @@ input:focus {
 @media (max-width: 700px) {
     body{
         padding: 2rem 2rem;
+    }
+}
+@media (max-width: 550px) {
+    .sm-text-center{
+        text-align: center;
+        margin: 0 auto;
     }
 }
 `
