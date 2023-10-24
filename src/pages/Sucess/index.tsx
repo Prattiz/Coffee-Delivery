@@ -8,7 +8,7 @@ export function Sucess() {
 
     return (
       <Container>
-        <Header isOutOfHome={true} value={2}/>
+        <Header isOutOfHome={true} value={0}/>
         <main>
 
             <h1>Uhu! Pedido Confirmado</h1>

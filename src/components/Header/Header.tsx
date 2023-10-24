@@ -10,7 +10,7 @@ interface OnHome{
    
 }
 
-export function Header({isOutOfHome = false, value,  }: OnHome){
+export function Header({isOutOfHome = false, value }: OnHome){
 
     const navigate = useNavigate();
 
