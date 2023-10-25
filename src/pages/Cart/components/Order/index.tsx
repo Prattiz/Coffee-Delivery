@@ -1,13 +1,26 @@
 import { Container, Content, CooffeCard } from "../styles";
 import { MapPinLine, CurrencyDollar } from "@phosphor-icons/react";
 import { Selected } from "../Selected";
+import { useNavigate } from "react-router-dom";
+
 
 
 export function Order(){
+
+    const navigate = useNavigate();
+
+
+
+    function handleSubmitOrder(){
+        
+        navigate("/sucess")
+    }
+
+    
     return(
         <Container>
 
-            <form action="">
+            <form onSubmit={handleSubmitOrder}>
             <Content>
                 <h1>Complete seu pedido</h1>
                 
@@ -23,29 +36,29 @@ export function Order(){
 
                         
                             
-                        <input type="text" id="cep" placeholder="CEP" />
+                        <input required type="text" id="cep" placeholder="CEP" />
                         <label className="sr-only" htmlFor="cep">CEP</label>
                             
-                        <input type="text" id="rua" placeholder="Rua" />
+                        <input required type="text" id="rua" placeholder="Rua" />
                         <label className="sr-only" htmlFor="rua">Rua</label>
 
                         <div>
-                            <input type="text" id="numero" placeholder="Número" />
+                            <input required type="text" id="numero" placeholder="Número" />
                             <label className="sr-only" htmlFor="numero">Número</label>
 
-                            <input type="text" id="complemento" placeholder="Complemento (Opcional)" />
-                            <label className="sr-only" htmlFor="complemento">Complemento, Opcional</label>
+                            <input type="text" id="complemento" required={false} placeholder="Complemento (Opcional)" />
+                            <label className="sr-only" htmlFor="complemento" >Complemento, Opcional</label>
                         </div>
 
                         <div>
                         
-                            <input type="text" id="bairro" placeholder="Bairro" />
+                            <input required type="text" id="bairro" placeholder="Bairro" />
                             <label className="sr-only" htmlFor="bairro">Bairro</label>
 
-                            <input type="text" id="cidade" placeholder="Cidade" />
+                            <input required type="text" id="cidade" placeholder="Cidade" />
                             <label className="sr-only" htmlFor="cidade">Cidade</label>
 
-                            <input type="text" id="uf" placeholder="UF" />
+                            <input required type="text" id="uf" placeholder="UF" maxLength={2}/>
                             <label className="sr-only" htmlFor="uf">Uf</label>
 
                         </div>
@@ -61,13 +74,25 @@ export function Order(){
                         </footer>
 
                         <div className="payme">
-                            <input type="radio" name="metodoPagamento" id="cartaoCredito" value="cartaoCredito" className="sr-only"/>
+                            <input required 
+                                type="radio" name="metodoPagamento" id="cartaoCredito"
+                                value="cartaoCredito" className="sr-only"
+                             />
+
                             <label htmlFor="cartaoCredito">Cartão de Crédito</label>
 
-                            <input type="radio" name="metodoPagamento" id="cartaoDebito" value="cartaoDebito" className="sr-only"/>
+                            <input  
+                                type="radio" name="metodoPagamento" id="cartaoDebito"       
+                                value="cartaoDebito" className="sr-only"
+                            />
+
                             <label htmlFor="cartaoDebito">Cartão de Débito</label>
 
-                            <input type="radio" name="metodoPagamento" id="dinheiro" value="dinheiro" className="sr-only" />
+                            <input   
+                                type="radio" name="metodoPagamento" id="dinheiro" 
+                                value="dinheiro" className="sr-only" checked 
+                            />
+
                             <label htmlFor="dinheiro">Dinheiro</label>
                         </div>
                         
@@ -76,6 +101,7 @@ export function Order(){
                 </Content>
 
                 <Selected/>
+                
             </form>
             
         </Container>

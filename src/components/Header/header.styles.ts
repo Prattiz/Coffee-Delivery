@@ -48,7 +48,7 @@ export const Container = styled.header`
         background: ${props => props.theme["yellow_100"]};
     }
 
-    .backButton{
+    .bg-purple{
         background-color: ${props => props.theme["purple_100"]}; 
     }
 

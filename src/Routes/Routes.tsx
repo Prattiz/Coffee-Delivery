@@ -1,6 +1,6 @@
-import { Home } from "./pages/Home";
-import { Sucess } from "./pages/Sucess";
-import { Cart } from "./pages/Cart";
+import { Home } from "../pages/Home";
+import { Sucess } from "../pages/Sucess";
+import { Cart } from "../pages/Cart";
 
 import { Route, Routes } from "react-router-dom";
 

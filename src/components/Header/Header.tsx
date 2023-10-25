@@ -2,20 +2,27 @@ import { Container } from "./header.styles";
 import icon from "../../assets/icon.svg";
 import { MapPin, ShoppingCart, ArrowCircleLeft } from "@phosphor-icons/react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CustomerContext } from "../../Context/ValuesContext";
+
 
 
 interface OnHome{
     isOutOfHome:boolean,
     value: number,
-   
+ 
 }
 
-export function Header({isOutOfHome = false, value }: OnHome){
+
+export function Header({isOutOfHome = false, value}: OnHome){
 
     const navigate = useNavigate();
 
-
-
+    const { cart } = useContext(CustomerContext);
+    
+    
+    
+    
      function NavigateCart(){
         navigate("/cart")
      }
@@ -23,6 +30,7 @@ export function Header({isOutOfHome = false, value }: OnHome){
      function NavigateHome(){
         navigate("/");    
      }
+
     return(
         <Container>
             <img src={icon} alt="Coffee Delivery"/>
@@ -31,7 +39,7 @@ export function Header({isOutOfHome = false, value }: OnHome){
                     
                     {
                     isOutOfHome &&
-                    <button className="backButton"
+                    <button className="bg-purple"
                      onClick={NavigateHome}>
                         <ArrowCircleLeft size={23} color="#8047F8" weight="fill"/>
                     </button>
@@ -44,10 +52,12 @@ export function Header({isOutOfHome = false, value }: OnHome){
                 </span>
 
            
+                
                 <button onClick={NavigateCart}> 
-                   {value !== 0 && <strong>{value}</strong>} 
+                   {value !== 0 && <strong>{cart.reduce((valortotal, cooffe ) => valortotal + cooffe.values, 0)}</strong>} 
                     <ShoppingCart size={23} color="#C47F00" weight="fill"/>  
-                </button>                
+                </button> 
+                             
             </div>
         </Container>
     )
