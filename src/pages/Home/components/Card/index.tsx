@@ -1,30 +1,21 @@
 import { Container, Apresentation } from "./styles";
-import { ShoppingCartSimple, Plus, Minus } from "@phosphor-icons/react";
-import { useContext } from "react";
+import { ShoppingCartSimple } from "@phosphor-icons/react";
+
 import { useNavigate } from "react-router-dom";
-import { CustomerContext } from "../../../../Context/ValuesContext";
 
+import { AllCoffeProps } from "../../../../Context/ValuesContext";
+import { ToggleCart } from "../../../../components/ToggleCart";
 
-
-interface AllCoffeProps {
-   
-    id: number
-    name: string
-    tags: string[]
-    image: string
-    text: string
-    
-}
 
 interface TagProps{
     tag: string
 }
 
-export function Card({ image, name, text, tags, id}: AllCoffeProps){
+export function Card({ image, name, text, tags, id }: AllCoffeProps){
 
     const navigate = useNavigate();
 
-    const { cart, addCoffee, subtractCoffee } = useContext(CustomerContext);
+   
 
 
     function handleSubmit(){
@@ -46,7 +37,7 @@ export function Card({ image, name, text, tags, id}: AllCoffeProps){
                 <img src={image} alt={name} />
                 <div>
                     {
-                    tags.map((tag, index) => (
+                    tags?.map((tag, index) => (
                         <CoffeeTag key={index} tag={tag}/>
                     ))
                     }
@@ -57,18 +48,13 @@ export function Card({ image, name, text, tags, id}: AllCoffeProps){
             </Apresentation>
         
             <form onSubmit={handleSubmit}>
-                <p>R$<span>9:90</span></p>
+                <div>
+                <p>R$<span>9,90</span></p>
                 
-                <div className="toogleNumber"> 
-                    <button type="button" onClick={() => addCoffee(id)}><Plus size={20} weight="bold"/></button>
-                    <input type="number"
-                         min={0} max={20} 
-                     disabled
-                     value={cart.find(values => values.id == id)?.values?? 0}/>
-                    <button type="button" onClick={() => subtractCoffee(id)}><Minus size={20} weight="bold"/></button>
-                </div>
+                <ToggleCart id={id}/>
                
-                <button type="submit"><ShoppingCartSimple size={22} color="#fff" weight="fill"/></button>
+                <button className="submitButton" type="submit"><ShoppingCartSimple size={22} color="#fff" weight="fill"/></button>
+                </div>
             </form>
             
         </Container>

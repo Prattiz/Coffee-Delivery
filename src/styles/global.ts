@@ -63,6 +63,10 @@ input:focus {
     outline: none;
 }
 
+label{
+    cursor: pointer;
+}
+
 
 @media (max-width: 700px) {
     body{

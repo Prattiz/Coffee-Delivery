@@ -1,10 +1,16 @@
 import { Container, Content, CooffeCard } from "../styles";
 import { SelectedCoffes } from "../SelectedCoffes";
+import { CustomerContext } from "../../../../Context/ValuesContext";
+import { useContext } from "react";
+import { Cooffes } from "../../../../components/Details/allCoffes";
 
 
 
 export function Selected(){
 
+    const { totalCart, cart } = useContext(CustomerContext);
+    const total = totalCart * 9.90 + 3.50;
+    const itens = totalCart * 9.90;
     
 
     return(
@@ -13,23 +19,36 @@ export function Selected(){
                 <h1>Cafés Selecionados</h1>
 
                 <CooffeCard>
-                    <SelectedCoffes/>
+                    {
+                        cart.map(itens => {
+                            const coffee = Cooffes.find(item => item.id === itens.id); 
+                            
+                            if (coffee) {
+                              return (
+                                <SelectedCoffes
+                                  {...coffee}
+                                  key={coffee.id}
+                                />
+                              )
+                            } 
+                          })      
+                    }
                     
                     <footer className="footerSelected">
                     
                         <p>
                             Total de Itens 
-                            <span>2</span>
+                            <span>R$ {itens.toFixed(2)}</span>
                         </p>
 
                         <p>
                             Entrega
-                            <span>R$ 3,50</span>
+                            <span>R$ 3.50</span>
                         </p>
 
                         <strong>
                             Total 
-                            <span>R$ 30</span>
+                            <span>R$ {total.toFixed(2)}</span>
                         </strong>
 
                         <button type="submit">Confirmar Pedido</button>

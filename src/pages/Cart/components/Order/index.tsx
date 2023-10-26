@@ -1,5 +1,5 @@
 import { Container, Content, CooffeCard } from "../styles";
-import { MapPinLine, CurrencyDollar } from "@phosphor-icons/react";
+import { MapPinLine, CurrencyDollar, CreditCard, Money, Bank} from "@phosphor-icons/react";
 import { Selected } from "../Selected";
 import { useNavigate } from "react-router-dom";
 
@@ -46,7 +46,7 @@ export function Order(){
                             <input required type="text" id="numero" placeholder="Número" />
                             <label className="sr-only" htmlFor="numero">Número</label>
 
-                            <input type="text" id="complemento" required={false} placeholder="Complemento (Opcional)" />
+                            <input type="text" id="complemento" placeholder="Complemento (Opcional)" />
                             <label className="sr-only" htmlFor="complemento" >Complemento, Opcional</label>
                         </div>
 
@@ -65,7 +65,7 @@ export function Order(){
                         
 
                         <footer>
-                            <CurrencyDollar size={23} color="#8047F8" /> 
+                            <CurrencyDollar /> 
 
                             <div>
                                 <span>Pagamento</span>
@@ -74,26 +74,26 @@ export function Order(){
                         </footer>
 
                         <div className="payme">
-                            <input required 
+                            <input required
                                 type="radio" name="metodoPagamento" id="cartaoCredito"
                                 value="cartaoCredito" className="sr-only"
                              />
 
-                            <label htmlFor="cartaoCredito">Cartão de Crédito</label>
+                            <label htmlFor="cartaoCredito"><CreditCard />Cartão de Crédito</label>
 
-                            <input  
+                            <input required 
                                 type="radio" name="metodoPagamento" id="cartaoDebito"       
                                 value="cartaoDebito" className="sr-only"
                             />
 
-                            <label htmlFor="cartaoDebito">Cartão de Débito</label>
+                            <label htmlFor="cartaoDebito"><Bank />Cartão de Débito</label>
 
-                            <input   
+                            <input required  
                                 type="radio" name="metodoPagamento" id="dinheiro" 
-                                value="dinheiro" className="sr-only" checked 
+                                value="dinheiro" className="sr-only" 
                             />
 
-                            <label htmlFor="dinheiro">Dinheiro</label>
+                            <label htmlFor="dinheiro"><Money />Dinheiro</label>
                         </div>
                         
                     </CooffeCard>       

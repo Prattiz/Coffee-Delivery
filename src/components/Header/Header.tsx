@@ -18,9 +18,7 @@ export function Header({isOutOfHome = false, value}: OnHome){
 
     const navigate = useNavigate();
 
-    const { cart } = useContext(CustomerContext);
-    
-    
+    const { totalCart } = useContext(CustomerContext);
     
     
      function NavigateCart(){
@@ -54,7 +52,7 @@ export function Header({isOutOfHome = false, value}: OnHome){
            
                 
                 <button onClick={NavigateCart}> 
-                   {value !== 0 && <strong>{cart.reduce((valortotal, cooffe ) => valortotal + cooffe.values, 0)}</strong>} 
+                   {value !== 0 && <strong>{totalCart}</strong>} 
                     <ShoppingCart size={23} color="#C47F00" weight="fill"/>  
                 </button> 
                              

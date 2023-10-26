@@ -60,7 +60,7 @@ export const Content = styled.main`
     }
 `
 
-export const CooffeCard = styled.div`
+export const CooffeCard = styled.main`
 
     padding: 4rem;
     display: flex;
@@ -68,7 +68,7 @@ export const CooffeCard = styled.div`
     gap:3.2rem;
     background-color:${props => props.theme["white_300"]};
 
-    input, label{
+    input[type="text"], label{
         width: 100%;
         padding: 1.2rem;
         border-radius: 4px;
@@ -95,14 +95,58 @@ export const CooffeCard = styled.div`
         label{
             padding: 16px;
             display: flex;
+            gap: 16px;
             align-items: center;
             justify-content: center;
+            white-space: nowrap;
         }
         
         input:checked + label {
-            background-color: ${props => props.theme["yellow_200"]};
-            color: ${props => props.theme["white"]};
+            border: 1px solid ${props => props.theme["purple_300"]};
             font-weight: bold;
         }
     }
+
+    svg{
+        color:  ${props => props.theme["purple_800"]};
+        height: 23px;
+        width: 23px;
+    }
+`
+export const Apresentation = styled.div`
+
+    display: flex;
+    gap:auto;
+    white-space: nowrap;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap:8px;
+    }
+
+    span{
+        color: ${props => props.theme["gray_500"]};
+        font-weight: bold;
+    }
+`
+
+export const ButtonRemove = styled.button`
+
+
+    background-color: ${props => props.theme["white_500"]};
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    height: 3.6rem;    
+    color: ${props => props.theme["gray_400"]};
+    font-size: 12px;
+
+    &:hover{
+        border: 1px solid ${props => props.theme["purple_800"]};
+    }
+
 `

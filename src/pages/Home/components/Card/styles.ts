@@ -31,32 +31,10 @@ export const Container = styled.div`
         }
     }
 
-    button{
+    .submitButton{
         background-color: ${props => props.theme["purple_800"]};
         border-radius: 8px;
         padding: 8px;
-    }
-
-    .toogleNumber{
-        background-color: ${props => props.theme["white_500"]};
-        border-radius: 8px;
-        padding: 5px;
-        display: flex;
-        gap: 4px;
-        justify-content: center;
-        
-        
-        input{
-            width: 1.6rem;
-            border: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        button{
-            background: none;
-            color: ${props => props.theme["purple_800"]};
-        }
     }
 `
 
