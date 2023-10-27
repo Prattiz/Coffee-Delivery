@@ -13,7 +13,7 @@ export function Home() {
 
   return (
     <div>
-      <Header isOutOfHome={false} value={0}/>
+      <Header isOutOfHome={false} />
       <Background /> 
       <Coffes />
     </div>

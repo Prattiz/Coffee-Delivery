@@ -68,7 +68,7 @@ export const CooffeCard = styled.main`
     gap:3.2rem;
     background-color:${props => props.theme["white_300"]};
 
-    input[type="text"], label{
+    input[type="text"],  input[type="number"], label{
         width: 100%;
         padding: 1.2rem;
         border-radius: 4px;

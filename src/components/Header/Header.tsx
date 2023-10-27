@@ -9,12 +9,10 @@ import { CustomerContext } from "../../Context/ValuesContext";
 
 interface OnHome{
     isOutOfHome:boolean,
-    value: number,
- 
 }
 
 
-export function Header({isOutOfHome = false, value}: OnHome){
+export function Header({isOutOfHome = false }: OnHome){
 
     const navigate = useNavigate();
 
@@ -35,13 +33,13 @@ export function Header({isOutOfHome = false, value}: OnHome){
 
             <div>
                     
-                    {
-                    isOutOfHome &&
+                {
+                isOutOfHome &&
                     <button className="bg-purple"
-                     onClick={NavigateHome}>
+                        onClick={NavigateHome}>
                         <ArrowCircleLeft color="#8047F8" weight="fill"/>
                     </button>
-                    }
+                }   
               
 
                 <span>
@@ -51,10 +49,18 @@ export function Header({isOutOfHome = false, value}: OnHome){
 
            
                 
-                <button onClick={NavigateCart}> 
-                   {value !== 0 && <strong>{totalCart}</strong>} 
-                    <ShoppingCart  color="#C47F00" weight="fill"/>  
-                </button> 
+                { 
+                totalCart?
+                    <button onClick={NavigateCart}> 
+                        <strong>{totalCart}</strong>
+                        <ShoppingCart  color="#C47F00" weight="fill"/>  
+                    </button>
+                   :
+                    <button disabled> 
+                        <strong className="sr-only"></strong>
+                        <ShoppingCart color="#C47F00" weight="fill"/>  
+                    </button> 
+                }
                              
             </div>
         </Container>

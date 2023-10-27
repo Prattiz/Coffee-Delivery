@@ -2,12 +2,16 @@ import { Container, Content, CooffeCard } from "../styles";
 import { MapPinLine, CurrencyDollar, CreditCard, Money, Bank} from "@phosphor-icons/react";
 import { Selected } from "../Selected";
 import { useNavigate } from "react-router-dom";
+// import { useContext } from "react";
+// import { CustomerContext } from "../../../../Context/ValuesContext";
+
 
 
 
 export function Order(){
 
     const navigate = useNavigate();
+    // const { location } = useContext(CustomerContext)
 
 
 
@@ -36,14 +40,15 @@ export function Order(){
 
                         
                             
-                        <input required type="text" id="cep" placeholder="CEP" />
+                        <input 
+                        required type="number" id="cep" placeholder="CEP" />
                         <label className="sr-only" htmlFor="cep">CEP</label>
                             
                         <input required type="text" id="rua" placeholder="Rua" />
                         <label className="sr-only" htmlFor="rua">Rua</label>
 
                         <div>
-                            <input required type="text" id="numero" placeholder="Número" />
+                            <input required type="number" id="numero" placeholder="Número" />
                             <label className="sr-only" htmlFor="numero">Número</label>
 
                             <input type="text" id="complemento" placeholder="Complemento (Opcional)" />

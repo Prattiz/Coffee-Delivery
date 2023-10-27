@@ -46,6 +46,10 @@ export const Container = styled.header`
         padding: 8px;
         border-radius: 6px;
         background: ${props => props.theme["yellow_100"]};
+
+        &:disabled{
+            cursor: not-allowed;
+        }
     }
 
     .bg-purple{

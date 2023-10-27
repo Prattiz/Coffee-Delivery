@@ -1,24 +1,24 @@
-import { Container, Order } from "./styles";
+import { Container, Order, MotoImage } from "./styles";
 import { Header } from "../../components/Header/Header";
 import motoImage from "../../assets/manMotocicle.png";
-import {CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react"
+import {CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react";
 
 export function Sucess() {
  
 
     return (
       <Container>
-        <Header isOutOfHome={true} value={0} />
-        <main>
+        <Header isOutOfHome={true} />
+        <div>
 
             <h1>Uhu! Pedido Confirmado</h1>
             <p>Agora é só aguardar que logo o café chegará até você</p>
           
-          <header className="header">
+          <main>
             <Order> 
               <p>
 
-                <MapPin  weight="fill"/> 
+                <MapPin weight="fill"/> 
                 Entregue em <strong className="wontBreak">....</strong>
                 ...
 
@@ -44,11 +44,11 @@ export function Sucess() {
               </p>
             </Order>
 
-            <img className="motoImage" src={motoImage} alt="imagem de um entregador indo ao seu destino de moto" /> 
+            <MotoImage src={motoImage} alt="imagem de um entregador indo ao seu destino de moto" /> 
             
-          </header>
+          </main>
 
-        </main>       
+        </div>       
       </Container>
     )
   }

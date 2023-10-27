@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     
     
-    .header{
+    main{
         display: flex;
         gap: 10rem;
     }
@@ -21,17 +21,6 @@ export const Container = styled.div`
         margin-bottom: 4rem;
     }
 
-    .motoImage{
-        width: 500px;
-        height: 300px;
-    }
-
-    @media (max-width: 700px) {
-        .motoImage{
-            display: none;   
-        }
-        
-    }
 `
 
 
@@ -79,4 +68,15 @@ export const Order = styled.div`
         flex-direction: column;
     }
 
+`
+
+export const MotoImage = styled.img`
+
+    width: 500px;
+    height: 300px;
+   
+
+    @media (max-width: 700px) {
+        display: none;   
+    }
 `
