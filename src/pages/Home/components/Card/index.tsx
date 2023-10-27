@@ -53,7 +53,7 @@ export function Card({ image, name, text, tags, id }: AllCoffeProps){
                 
                 <ToggleCart id={id}/>
                
-                <button className="submitButton" type="submit"><ShoppingCartSimple size={22} color="#fff" weight="fill"/></button>
+                <button className="submitButton" type="submit"><ShoppingCartSimple  color="#fff" weight="fill"/></button>
                 </div>
             </form>
             

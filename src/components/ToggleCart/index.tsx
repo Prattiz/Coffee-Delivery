@@ -12,13 +12,15 @@ export function ToggleCart({ id }: AllCoffeProps){
 
     return(
         <Container> 
-            <button type="button" onClick={() => addCoffee(id)}><Plus size={20} weight="bold"/></button>
+            <button type="button" onClick={() => subtractCoffee(id)}><Minus  weight="bold"/></button>
+
             <input type="number"
                  min={0} max={20} 
                  disabled
                  value={cart.find(values => values.id == id)?.values?? 0}
             />
-           <button type="button" onClick={() => subtractCoffee(id)}><Minus size={20} weight="bold"/></button>
+            
+           <button type="button" onClick={() => addCoffee(id)}><Plus  weight="bold"/></button>
         </Container>
     )
 }

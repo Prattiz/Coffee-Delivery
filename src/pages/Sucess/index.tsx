@@ -18,14 +18,14 @@ export function Sucess() {
             <Order> 
               <p>
 
-                <MapPin size={23} weight="fill"/> 
+                <MapPin  weight="fill"/> 
                 Entregue em <strong className="wontBreak">....</strong>
                 ...
 
               </p>
 
               <p>
-                <Timer size={23} weight="fill"/>
+                <Timer weight="fill"/>
                 <span>
 
                   Previsão de entrega
@@ -34,7 +34,7 @@ export function Sucess() {
 
                 </span>
               </p>
-              <p><CurrencyDollar size={23}/> 
+              <p><CurrencyDollar/> 
                <span>
 
                 Pagamento da entrega

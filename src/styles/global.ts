@@ -67,6 +67,10 @@ label{
     cursor: pointer;
 }
 
+svg{
+    width: 23px;
+    height: 23px;
+}
 
 @media (max-width: 700px) {
     body{

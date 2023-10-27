@@ -11,7 +11,9 @@ interface CustomerContextProps{
   addCoffee:(id: number) => void, 
   subtractCoffee: (id: number) => void,
   totalCart: number,
-  totalFromId: number
+  totalFromId: number,
+  handleRemove: (index: number) => void
+  
 }
 
 export interface AllCoffeProps {
@@ -30,7 +32,7 @@ export const CustomerContext = createContext({} as CustomerContextProps);
 
 export function CustomerContextProvider({children}: ChildrenProps){
 
-  const [ cart, setCart ] = useState<{id:number, values: number }[]>([]);
+  const [ cart, setCart ] = useState<{id:number, values: number}[]>([]);
   const totalCart = cart.reduce((total, cooffe ) => total + cooffe.values, 0);
   const totalFromId = 1;
 
@@ -66,8 +68,29 @@ export function CustomerContextProvider({children}: ChildrenProps){
     }))  
     }
 
+    function handleRemove(index: number){
+      setCart(
+          cart.filter((product) => index !== product.id)
+      )
+  }
+
+  
+
   return(
-    <CustomerContext.Provider value={{cart, addCoffee, subtractCoffee, totalCart, totalFromId}}>
+    <CustomerContext.Provider 
+    value=
+    {
+      {
+        cart,
+        addCoffee, 
+        subtractCoffee, 
+        totalCart, 
+        totalFromId, 
+        handleRemove
+        
+      }
+    }
+    >
       {children}
     </CustomerContext.Provider>
   )

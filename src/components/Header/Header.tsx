@@ -39,13 +39,13 @@ export function Header({isOutOfHome = false, value}: OnHome){
                     isOutOfHome &&
                     <button className="bg-purple"
                      onClick={NavigateHome}>
-                        <ArrowCircleLeft size={23} color="#8047F8" weight="fill"/>
+                        <ArrowCircleLeft color="#8047F8" weight="fill"/>
                     </button>
                     }
               
 
                 <span>
-                    <MapPin size={23} color="#8047F8" weight="fill"/> 
+                    <MapPin  color="#8047F8" weight="fill"/> 
                     Porto Alegre, RS
                 </span>
 
@@ -53,7 +53,7 @@ export function Header({isOutOfHome = false, value}: OnHome){
                 
                 <button onClick={NavigateCart}> 
                    {value !== 0 && <strong>{totalCart}</strong>} 
-                    <ShoppingCart size={23} color="#C47F00" weight="fill"/>  
+                    <ShoppingCart  color="#C47F00" weight="fill"/>  
                 </button> 
                              
             </div>

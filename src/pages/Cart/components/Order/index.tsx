@@ -26,7 +26,7 @@ export function Order(){
                 
                     <CooffeCard>
                         <header>
-                            <MapPinLine size={23} color="#C47F17" /> 
+                            <MapPinLine  color="#C47F17" /> 
 
                             <div>
                                 <span>Endereço da Entrega</span>

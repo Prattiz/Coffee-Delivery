@@ -136,7 +136,7 @@ export const ButtonRemove = styled.button`
 
     background-color: ${props => props.theme["white_500"]};
     border-radius: 8px;
-    padding: 8px;
+    padding: 0 8px;
     display: flex;
     gap: 4px;
     justify-content: center;
