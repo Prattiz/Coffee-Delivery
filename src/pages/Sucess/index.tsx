@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { CustomerContext } from "../../Context/ValuesContext";
 
 export function Sucess() {
-  const { location } = useContext(CustomerContext);
+  const { location, paymentMethod } = useContext(CustomerContext);
 
   console.log(location?.Street)
 
@@ -48,7 +48,7 @@ export function Sucess() {
 
                 <p>
                   Pagamento da entrega
-                  <strong>Cartão de C/D AND DINHEIRO </strong>
+                  <strong>{paymentMethod}</strong>
                 </p>
               </div>
             </Order>

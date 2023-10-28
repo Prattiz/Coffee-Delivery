@@ -12,13 +12,15 @@ import { useForm, SubmitHandler } from "react-hook-form"
 
 export function Order(){
 
-    const { handleSubmitLocation } = useContext(CustomerContext);
+    const { handleSubmitLocation, handlePaymentMethodChange } = useContext(CustomerContext);
     const { register, handleSubmit } = useForm<FormData>();
 
     const onSubmit: SubmitHandler<FormData> = (data) => {
         handleSubmitLocation(data)
-        console.log(data)
-      };
+    };
+    
+    
+    
 
     
     return(
@@ -113,26 +115,30 @@ export function Order(){
                         </footer>
 
                         <div className="payme">
-                            <input required
-                            
+
+                            <input required 
+
                                 type="radio" name="metodoPagamento" id="cartaoCredito"
-                                value="cartaoCredito" className="sr-only"
+                                value="Cartão de Credito" className="sr-only"
+                                onChange={handlePaymentMethodChange}
                              />
 
                             <label htmlFor="cartaoCredito"><CreditCard />Cartão de Crédito</label>
 
-                            <input required
+                            <input required 
                              
-                                type="radio" name="metodoPagamento" id="cartaoDebito"       
-                                value="cartaoDebito" className="sr-only"
+                                type="radio" className="sr-only" name="metodoPagamento" id="cartaoDebito"       
+                                value="Cartão de Debito" 
+                                onChange={handlePaymentMethodChange}
                             />
 
                             <label htmlFor="cartaoDebito"><Bank />Cartão de Débito</label>
 
-                            <input required
+                            <input required 
                               
-                                type="radio" name="metodoPagamento" id="dinheiro" 
-                                value="dinheiro" className="sr-only" 
+                                type="radio" className="sr-only" name="metodoPagamento" id="dinheiro" 
+                                value="Dinheiro" 
+                                onChange={handlePaymentMethodChange} 
                             />
 
                             <label htmlFor="dinheiro"><Money />Dinheiro</label>

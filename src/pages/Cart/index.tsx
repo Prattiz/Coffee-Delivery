@@ -6,7 +6,7 @@ export function Cart() {
  
     return (
       <div>
-        <Header isOutOfHome={true} />
+        <Header isOutOfHome={true} /> 
         <Order/>
       </div>
     )

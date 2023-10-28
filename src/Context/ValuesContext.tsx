@@ -35,6 +35,10 @@ interface CustomerContextProps{
 
   location: FormData | undefined,
   handleSubmitLocation: (location: FormData) => void,
+
+  paymentMethod: string,
+  handlePaymentMethodChange: (Event:any) => void
+  
 }
 
 
@@ -50,8 +54,7 @@ export function CustomerContextProvider({children}: ChildrenProps){
   
   const [ location, setLocation ] = useState<FormData>();
 
-
-
+  const [ paymentMethod, setpaymentMethod] = useState(''); 
 
   const navigate = useNavigate();
 
@@ -99,6 +102,10 @@ export function CustomerContextProvider({children}: ChildrenProps){
     navigate("/sucess")
   };
 
+
+  function handlePaymentMethodChange(event: any){
+    setpaymentMethod(event.target.value);
+  }
   
 
   return(
@@ -113,6 +120,8 @@ export function CustomerContextProvider({children}: ChildrenProps){
         handleRemove,
         location,
         handleSubmitLocation,
+        paymentMethod,
+        handlePaymentMethodChange
       }
     }
     >
