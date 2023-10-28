@@ -1,20 +1,11 @@
 import { createContext, ReactNode, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
 type ChildrenProps = {
   children: ReactNode;
 };
-
-interface CustomerContextProps{
-  cart: {id:number, values: number}[],
-  location:{street:string, HomeNumber: number, neighborhood: string, city: string, uf: string}[],
-  addCoffee:(id: number) => void, 
-  subtractCoffee: (id: number) => void,
-  totalCart: number,
-  handleRemove: (index: number) => void
-  
-}
 
 export interface AllCoffeProps {
    
@@ -26,6 +17,27 @@ export interface AllCoffeProps {
   
 }
 
+export interface FormData {
+  Street: string
+  HomeNumber: number
+  District: string
+  City: string
+  Uf: string
+}
+
+interface CustomerContextProps{
+  cart: {id:number, values: number}[],
+  addCoffee:(id: number) => void, 
+  subtractCoffee: (id: number) => void,
+  totalCart: number,
+
+  handleRemove: (index: number) => void,
+
+  location: FormData | undefined,
+  handleSubmitLocation: (location: FormData) => void,
+}
+
+
 
 export const CustomerContext = createContext({} as CustomerContextProps);
 
@@ -36,13 +48,13 @@ export function CustomerContextProvider({children}: ChildrenProps){
   const [ cart, setCart ] = useState<{id:number, values: number}[]>([]);
   const totalCart = cart.reduce((total, cooffe ) => total + cooffe.values, 0);
   
-  const [ location, setLocation ] = useState<{
-    street:string, 
-    HomeNumber: number, 
-    neighborhood: string, 
-    city: string, 
-    uf: string
-  }[]>([]);
+  const [ location, setLocation ] = useState<FormData>();
+
+
+
+
+  const navigate = useNavigate();
+
 
 
   function handleRemove(index: number){
@@ -82,6 +94,11 @@ export function CustomerContextProvider({children}: ChildrenProps){
     }))  
   }
 
+  function handleSubmitLocation(newLocation: FormData){
+    setLocation(newLocation);
+    navigate("/sucess")
+  };
+
   
 
   return(
@@ -94,8 +111,8 @@ export function CustomerContextProvider({children}: ChildrenProps){
         subtractCoffee, 
         totalCart, 
         handleRemove,
-        location
-        
+        location,
+        handleSubmitLocation,
       }
     }
     >
