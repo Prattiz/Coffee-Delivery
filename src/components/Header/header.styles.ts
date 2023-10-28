@@ -24,6 +24,10 @@ export const Container = styled.header`
         align-items: center;
         border-radius: 6px;
         padding: 8px;
+
+        svg{
+            color: ${props => props.theme["purple_300"]};
+        }
     }
 
     strong{
@@ -42,18 +46,8 @@ export const Container = styled.header`
     }
 
     button{
-        position: relative;
         padding: 8px;
         border-radius: 6px;
-        background: ${props => props.theme["yellow_100"]};
-
-        &:disabled{
-            cursor: not-allowed;
-        }
-    }
-
-    .bg-purple{
-        background-color: ${props => props.theme["purple_100"]}; 
     }
 
     
@@ -68,5 +62,17 @@ export const Container = styled.header`
             margin-top: 12px;
         }  
     }
+`
 
+export const ButtonOutOfHome = styled.button`
+
+    background-color: ${props => props.theme["purple_100"]}; 
+    color: ${props => props.theme["purple_300"]};
+`
+
+export const ButtonRelative = styled.button`
+
+    position: relative;
+    background: ${props => props.theme["yellow_100"]};
+    color: ${props => props.theme["yellow_800"]};
 `

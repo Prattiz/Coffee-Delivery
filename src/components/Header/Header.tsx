@@ -1,4 +1,4 @@
-import { Container } from "./header.styles";
+import { Container, ButtonOutOfHome, ButtonRelative } from "./header.styles";
 import icon from "../../assets/icon.svg";
 import { MapPin, ShoppingCart, ArrowCircleLeft } from "@phosphor-icons/react";
 import { useNavigate } from "react-router-dom";
@@ -15,8 +15,7 @@ interface OnHome{
 export function Header({isOutOfHome = false }: OnHome){
 
     const navigate = useNavigate();
-
-    const { totalCart } = useContext(CustomerContext);
+    const { totalCart, location } = useContext(CustomerContext);
     
     
      function NavigateCart(){
@@ -35,31 +34,38 @@ export function Header({isOutOfHome = false }: OnHome){
                     
                 {
                 isOutOfHome &&
-                    <button className="bg-purple"
+                    <ButtonOutOfHome
                         onClick={NavigateHome}>
-                        <ArrowCircleLeft color="#8047F8" weight="fill"/>
-                    </button>
+                        <ArrowCircleLeft weight="fill"/>
+                    </ButtonOutOfHome>
                 }   
               
 
-                <span>
-                    <MapPin  color="#8047F8" weight="fill"/> 
-                    Porto Alegre, RS
-                </span>
+                {
+                location?
+                    <span>
+                        <MapPin weight="fill"/> 
+                        {location?.City}, {location?.Uf}
+                    </span>
+                    :
+                    <span>
+                        <MapPin weight="fill"/>
+                        Recife, Pe
+                    </span>    
+                }
 
            
-                
                 { 
                 totalCart?
-                    <button onClick={NavigateCart}> 
+                    <ButtonRelative onClick={NavigateCart}> 
                         <strong>{totalCart}</strong>
-                        <ShoppingCart  color="#C47F00" weight="fill"/>  
-                    </button>
+                        <ShoppingCart weight="fill"/>  
+                    </ButtonRelative>
                    :
-                    <button disabled> 
+                    <ButtonRelative disabled> 
                         <strong className="sr-only"></strong>
-                        <ShoppingCart color="#C47F00" weight="fill"/>  
-                    </button> 
+                        <ShoppingCart weight="fill"/>  
+                    </ButtonRelative> 
                 }
                              
             </div>

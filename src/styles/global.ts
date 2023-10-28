@@ -35,6 +35,10 @@ button {
     cursor: pointer;
     border: none;
     color: ${props => props.theme["white"]};
+
+    &:disabled{
+        cursor: not-allowed;
+    }
 }
 
 .sr-only{

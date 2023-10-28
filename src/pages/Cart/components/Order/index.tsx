@@ -12,7 +12,7 @@ import { useForm, SubmitHandler } from "react-hook-form"
 
 export function Order(){
 
-    const { handleSubmitLocation} = useContext(CustomerContext);
+    const { handleSubmitLocation } = useContext(CustomerContext);
     const { register, handleSubmit } = useForm<FormData>();
 
     const onSubmit: SubmitHandler<FormData> = (data) => {
@@ -30,7 +30,7 @@ export function Order(){
                 
                     <CooffeCard>
                         <header>
-                            <MapPinLine  color="#C47F17" /> 
+                            <MapPinLine color="#C47F17" /> 
 
                             <div>
                                 <span>Endereço da Entrega</span>
