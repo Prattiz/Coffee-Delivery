@@ -2,9 +2,14 @@ import { Container, Order, MotoImage } from "./styles";
 import { Header } from "../../components/Header/Header";
 import motoImage from "../../assets/manMotocicle.png";
 import {CurrencyDollar, MapPin, Timer } from "@phosphor-icons/react";
+import { useContext } from "react";
+import { CustomerContext } from "../../Context/ValuesContext";
 
 export function Sucess() {
- 
+  const { location } = useContext(CustomerContext);
+
+  console.log(location?.Street)
+
 
     return (
       <Container>
@@ -16,32 +21,36 @@ export function Sucess() {
           
           <main>
             <Order> 
-              <p>
+              <div>
 
                 <MapPin weight="fill"/> 
-                Entregue em <strong className="wontBreak">....</strong>
-                ...
 
-              </p>
+                <p>
+                  <span>Entregue em <strong className="wontBreak"> {location?.Street}, {location?.HomeNumber}</strong></span>
+                  {location?.District} - {location?.City}, {location?.Uf.toUpperCase()}
+                </p>
 
-              <p>
+              </div>
+
+              <div>
                 <Timer weight="fill"/>
-                <span>
+
+                <p>
 
                   Previsão de entrega
                   
                   <strong>20 min - 30min</strong>
 
-                </span>
-              </p>
-              <p><CurrencyDollar/> 
-               <span>
+                </p>
+              </div>
+              <div>
+                <CurrencyDollar/> 
 
-                Pagamento da entrega
-                <strong>Cartão de </strong>
-
-               </span>
-              </p>
+                <p>
+                  Pagamento da entrega
+                  <strong>Cartão de C/D AND DINHEIRO </strong>
+                </p>
+              </div>
             </Order>
 
             <MotoImage src={motoImage} alt="imagem de um entregador indo ao seu destino de moto" /> 

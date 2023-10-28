@@ -45,7 +45,7 @@ export function Header({isOutOfHome = false }: OnHome){
                 location?
                     <span>
                         <MapPin weight="fill"/> 
-                        {location?.City}, {location?.Uf}
+                        {location?.City}, {location?.Uf.toUpperCase()}
                     </span>
                     :
                     <span>

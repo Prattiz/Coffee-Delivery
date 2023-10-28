@@ -16,17 +16,16 @@ export const Container = styled.div`
     }
 
     p{
-        font-size: 2rem;
+        font-size: 1.6rem;
         color: ${props => props.theme["gray_500"]};
-        margin-bottom: 4rem;
     }
-
 `
 
 
 export const Order = styled.div`
 
     border: 1px solid ${props => props.theme["purple_800"]};
+    margin-top: 4rem;
     padding: 4rem;
     border-radius: 6px 36px;
     display: flex;
@@ -41,31 +40,37 @@ export const Order = styled.div`
         margin-bottom: 8px;
     } 
 
-    p{
+    div{
         display: flex;
         text-align: center;
         gap: 1.2rem;
         font-size: 1.6rem;
     }
-    p:nth-child(1) svg{
+    div:nth-child(1) svg{
         background-color: ${props => props.theme["purple_800"]}
     }
-    p:nth-child(2) svg {
+    div:nth-child(2) svg {
         background-color: ${props => props.theme["yellow_200"]};
     }
-    p:nth-child(3) svg{
+    div:nth-child(3) svg{
         background-color: ${props => props.theme["yellow_800"]} 
     } 
 
     strong{
         font-size: 1.6rem;
-        color: ${props => props.theme["black"]};
+        color: ${props => props.theme["gray_400"]};
         font-weight: bold;
     }
 
-    span{
+    p{
         display: flex;
         flex-direction: column;
+        text-align: start;
+    }
+
+
+    .wontBreak{
+        color: ${props => props.theme["gray_400"]};
     }
 
 `
