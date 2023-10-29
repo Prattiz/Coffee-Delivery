@@ -15,6 +15,7 @@ export const GlobalStyles =createGlobalStyle`
 
 body{
     font-family: 'Roboto', sans-serif;
+    
     background-color: ${props => props.theme["white_200"]};
     font-size: 1.6rem;
     padding: 3.2rem 16rem;

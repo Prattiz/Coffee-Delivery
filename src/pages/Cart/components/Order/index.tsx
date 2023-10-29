@@ -1,4 +1,4 @@
-import { Container, Content, CooffeCard } from "../styles";
+import { Container, Content, CooffeCard, PayMe } from "../styles";
 import { MapPinLine, CurrencyDollar, CreditCard, Money, Bank} from "@phosphor-icons/react";
 import { Selected } from "../Selected";
 
@@ -114,7 +114,7 @@ export function Order(){
                             </div>
                         </footer>
 
-                        <div className="payme">
+                        <PayMe>
 
                             <input required 
 
@@ -142,7 +142,7 @@ export function Order(){
                             />
 
                             <label htmlFor="dinheiro"><Money />Dinheiro</label>
-                        </div>
+                        </PayMe>
                         
                     </CooffeCard>       
                 

@@ -20,7 +20,7 @@ export function ToggleCart({ id }: AllCoffeProps){
                  value={cart.find(values => values.id == id)?.values?? 0}
             />
             
-           <button type="button" onClick={() => addCoffee(id)}><Plus  weight="bold"/></button>
+           <button type="button" onClick={() => addCoffee(id)}><Plus weight="bold"/></button>
         </Container>
     )
 }

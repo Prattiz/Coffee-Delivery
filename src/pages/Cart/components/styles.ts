@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 
-
     h1{
         font-size: 1.8rem;  
     }
@@ -10,27 +9,11 @@ export const Container = styled.div`
     form{
         display: flex;
         gap:3.2rem; 
-    }
 
-    .footerSelected{
-        display: flex;
-        flex-direction: column;
-        width: 37.2rem;
-        gap: 12px;
-        
-
-        p, strong{
+        @media (max-width: 1250px) {
+            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        button{
-            margin-top: 12px;
-            background-color: ${props => props.theme["yellow_800"]};
-            padding: 12px 8px;
-            border-radius: 8px;
-            font-weight: bold;
+            flex-direction: column;
         }
     }
 `
@@ -39,7 +22,6 @@ export const Content = styled.main`
 
     display: flex;
     flex-direction: column;
-    
     gap: 3.2rem;
     
     header, footer{
@@ -57,14 +39,20 @@ export const Content = styled.main`
             flex-direction: column;
             gap:2px;
         }
+    }  
+
+    @media (max-width: 510px) {
+        img{
+            display: none;
+        }
     }
 `
 
 export const CooffeCard = styled.main`
 
-    padding: 4rem;
+    padding: 5rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     gap:3.2rem;
     background-color:${props => props.theme["white_300"]};
 
@@ -83,36 +71,25 @@ export const CooffeCard = styled.main`
     }
 
     #cep, #numero, #bairro{
-        width: 20rem;
-        }
+        max-width: 20rem;
+    }
 
     #uf{
         width: 20%;
     }    
 
-    .payme{
-        
-        label{
-            padding: 16px;
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            justify-content: center;
-            white-space: nowrap;
-        }
-        
-        input:checked + label {
-            border: 1px solid ${props => props.theme["purple_300"]};
-            font-weight: bold;
-        }
-    }
 
     svg{
-        color:  ${props => props.theme["purple_800"]};
+        color: ${props => props.theme["purple_800"]};
         height: 23px;
         width: 23px;
     }
+
+    @media (max-width: 1250px) {
+        max-width: 70rem;
+    }
 `
+
 export const Apresentation = styled.div`
 
     display: flex;
@@ -129,12 +106,16 @@ export const Apresentation = styled.div`
         color: ${props => props.theme["gray_500"]};
         font-weight: bold;
     }
+
+    @media (max-width: 510px) {
+        flex-direction: column-reverse;
+    }
 `
 
 export const ButtonRemove = styled.button`
 
-
     background-color: ${props => props.theme["white_500"]};
+    max-width: 15rem;
     border-radius: 8px;
     padding: 0 8px;
     display: flex;
@@ -148,5 +129,50 @@ export const ButtonRemove = styled.button`
     &:hover{
         border: 1px solid ${props => props.theme["purple_800"]};
     }
+`
 
+
+export const FooterSelected = styled.footer`
+
+    display: flex;
+    flex-direction: column;
+        
+
+    p, strong{
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    button{
+        margin-top: 12px;
+        background-color: ${props => props.theme["yellow_800"]};
+        padding: 12px 8px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+`
+
+export const PayMe = styled.div`
+
+        
+    label{
+        padding: 16px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+    
+    input:checked + label {
+        border: 1px solid ${props => props.theme["purple_300"]};
+        font-weight: bold;
+    }
+
+
+    @media (max-width: 650px) {
+        flex-direction: column;
+    }   
 `

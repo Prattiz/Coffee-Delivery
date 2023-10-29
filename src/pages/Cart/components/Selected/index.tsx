@@ -1,4 +1,4 @@
-import { Container, Content, CooffeCard } from "../styles";
+import { Container, Content, CooffeCard, FooterSelected } from "../styles";
 import { SelectedCoffes } from "../SelectedCoffes";
 import { CustomerContext } from "../../../../Context/ValuesContext";
 import { useContext } from "react";
@@ -34,7 +34,7 @@ export function Selected(){
                           })      
                     }
                     
-                    <footer className="footerSelected">
+                    <FooterSelected>
                     
                         <p>
                             Total de Itens 
@@ -52,7 +52,7 @@ export function Selected(){
                         </strong>
 
                         <button type="submit">Confirmar Pedido</button>
-                    </footer>
+                    </FooterSelected>
                 </CooffeCard>
             </Content>
         </Container>

@@ -99,6 +99,7 @@ export function CustomerContextProvider({children}: ChildrenProps){
 
   function handleSubmitLocation(newLocation: FormData){
     setLocation(newLocation);
+    
     navigate("/sucess")
   };
 

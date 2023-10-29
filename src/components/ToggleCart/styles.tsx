@@ -9,22 +9,24 @@ export const Container = styled.main`
     gap: 4px;
     justify-content: center;
     height: 3.6rem;
-    max-width: 11rem;
+    width: 12rem;
         
     input{
         width: 3.5rem;
-        border: none;
         font-size: 1.7rem;
         font-weight: bold;
         display: flex; 
         padding: 1px;
         text-align: center;
         border: none;
+
+        @media (max-width: 100) {
+            
+        }
     }
 
     button{
         background: none;
         color: ${props => props.theme["purple_800"]};
-       
     }
 `

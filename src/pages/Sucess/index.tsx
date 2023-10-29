@@ -8,9 +8,6 @@ import { CustomerContext } from "../../Context/ValuesContext";
 export function Sucess() {
   const { location, paymentMethod } = useContext(CustomerContext);
 
-  console.log(location?.Street)
-
-
     return (
       <Container>
         <Header isOutOfHome={true} />

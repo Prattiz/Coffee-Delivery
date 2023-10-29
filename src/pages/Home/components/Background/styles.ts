@@ -69,12 +69,13 @@ export const Container = styled.div`
 
     @media (max-width: 1200px) {
         flex-direction: column;
-        padding: 5rem;
+        padding: 2rem;
         gap: 5rem;
 
         header{
             h1{
                 line-height: 1;
+                font-size: 4rem;
             }
         }
 

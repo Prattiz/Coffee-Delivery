@@ -54,7 +54,7 @@ export const Container = styled.header`
     @media (max-width: 630px) {
         flex-direction: column;
         justify-content: center;
-        padding: 3.2rem;
+        padding: 3.2rem 0;
         
         div{
             display: flex;
